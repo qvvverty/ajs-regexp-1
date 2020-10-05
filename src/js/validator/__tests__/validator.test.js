@@ -8,9 +8,12 @@ const invalidNicknames = [
   ['nickname-'],
   ['nickname_'],
   ['nick7777name'],
+  ['nick name'],
+  [' nickname'],
+  ['nickname '],
 ];
 
-test.each(invalidNicknames)('Expect .validateNickname to return false with %s', (invalidNickname) => {
+test.each(invalidNicknames)('Expect .validateNickname to return false with "%s"', (invalidNickname) => {
   expect(Validator.validateUsername(invalidNickname)).toBe(false);
 });
 
